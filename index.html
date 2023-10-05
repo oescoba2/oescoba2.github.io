@@ -120,24 +120,25 @@
 							<form method="post" action="#">
 
 								<!-- Form -->
-								<h2>Contact Me</h2>
-									<form action="https://formspree.io/f/mknlppao" method="POST" >
-								  
-									<label>
-									  Your Name:
-									  <input type="text" name="email">
-										
-									</label>
-									<label>
-									  Your email:  
-									  <input type="email" name="email">
-									</label>
-									<label>
-									  Your message:
-									  <textarea name="message"></textarea>
-									</label>
-									<!-- your other form fields go here -->
-									<button type="submit">Send</button>
+								<form action="https://formspree.io/f/mknlppao" method="POST" >
+									<div class="fields">
+										<div class="field">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="3"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" /></li>
+									</ul>
+								</form>
 									<p> Connect with Me</p>
 									<ul class="icons">
 										<li><a href="https://www.linkedin.com/in/oscar-j-escobar/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
