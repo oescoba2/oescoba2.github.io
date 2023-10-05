@@ -27,7 +27,7 @@
 
 						<!-- Post -->
 							<section class="post">
-								<div class="image main"><img src="images/my_picture.jpg" alt="" /></div>
+								<div class="image main"><img src="images/my_picture.JPG" alt="" /></div>
 								<!-- Text stuff -->
 									<h2>About Me</h2>
 									<p>  <b>"Aim for the moon. If you miss, you may hit a star, "</b> Clement Stone once stated. As a young boy, I took that to heart, watching the NASA channel and yearning for the exploration of the vastness of our atmosphere and galaxy around us, and became passionate about rockets, computational fluid dynamics, and Machine Learning. 
@@ -58,17 +58,27 @@
 									<hr />
 									<header>
 										<h2>Current Projects and Activities</h2>
-										<p>BYU Rocketry Club: Hybrid Rocket Research Team</p>
+										<h4>BYU Rocketry Club: Hybrid Rocket Research Team</h4>
 									</header>
 									<div class="image main"><img src="images/Rocketry_Club.JPG" alt="" /></div>
-									<p>I joined the BYU Rocketry Club: Hybrid Rocket Research Team back in 2019. My friend Brennen invited me to come what the club was about and the rest is history. I have always had a big affinity to the cosmos and intricacies of astronautics
-										and the engineering and mathematics contained therein. At the time I joined, the club, overseen by Dr. Gorrell, was the recipient of a grant from the Utah-NASA Consortium 
+									<p>I joined the BYU Rocketry Club: Hybrid Rocket Research Team back in the fall of 2021. My friend Brennen invited me to come what the club was about and the rest is history. I have always had a big affinity to the cosmos and intricacies of astronautics
+										and the engineering and mathematics contained therein. At the time I joined, the club, overseen by Dr. Gorrell, was the recipient of a grant from the Utah-NASA Consortium of about $8,000 that was to be used to generate research for paraffin 
+										LOX hybrid fuel. We created a design for a 12ft rocket that would reach a target of 10,000 ft and have a maiden voyage in the summer of 2022. We were able to present and publish our findings with the Utah-NASA consortium <a href="https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=1706&context=spacegrant">webpage</a> 
+										in the spring of 2022<br><br>
+										I was working within the propulsion subteam to create the LOX dome, combustion chamber, fuel grain, and nozzle.
+										I was tasked with implementing a design for the nozzle configurations that would enable us to reach a target exit mach number of 3.1. I studied the works of Gas Dynamics by Zucrow and learned more about the method characteristics employed for nozzle design.
+										I was able to implemented a Python3 script that would similate axisymmetric irrotational compressible given a throat area, radius of curvarture, desired exit mach number, and specific heat of the fluid. The script would output two solutions: 1. Rao nozzle
+										in 3D (using Matplotlib) and a txt or csv or excel file of the nozzle characteristic points that would then be used to create a CAD model in solid works. I am now currently working in implementin numerical methods for the transonic region and in recreating 
+										the mesh using a more efficient method as well that incorporates flow that does not become sonic at the throat and then use chemical chain reactions for when the mixture is not ideal. 
+										<br><br>
+										Currently, our goal is to design a small scaled motor for the rocket since we had to resize the piping and increase the design due to new parachutes that had to be purchased since the originals never came in and pipes that were unable to be bent correctly given 
+										our limited tools. I am working in creating the igniter and do my own research to better implement the code. Our goal is to have tested the scaled motor and have the rocket fly during my senior year. You can see ou
 									</p>
 									<header>
 										
-										<p>Machine Learning (Current Job)</p>
+										<h4>Machine Learning (Current Job)</h4>
 									</header>
-									<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+									<p>on faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
 									<header>
 										<p>BYU Aeronautics</p>
 									</header>
@@ -82,36 +92,7 @@
 
 								<!-- Lists -->
 									<h2>Career Goals and Interests</h2>
-									<div class="row">
-										<div class="col-6 col-12-small">
 
-											<h3>Unordered</h3>
-											<ul>
-												<li>Dolor pulvinar etiam.</li>
-												<li>Sagittis lorem eleifend.</li>
-												<li>Felis feugiat dolore viverra.</li>
-												<li>Dolor pulvinar etiam.</li>
-											</ul>
-
-											<h3>Alternate</h3>
-											<ul class="alt">
-												<li>Dolor pulvinar etiam etiam.</li>
-												<li>Sagittis adipiscing eleifend.</li>
-												<li>Felis enim dolore viverra.</li>
-												<li>Dolor pulvinar etiam etiam.</li>
-											</ul>
-
-										</div>
-										<div class="col-6 col-12-small">
-
-											<h3>Ordered</h3>
-											<ol>
-												<li>Dolor pulvinar etiam.</li>
-												<li>Etiam vel felis at viverra.</li>
-												<li>Felis enim feugiat magna.</li>
-												<li>Etiam vel felis nullam.</li>
-												<li>Felis enim et tempus.</li>
-											</ol>
 
 										</div>
 									</div>
@@ -119,33 +100,7 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<section>
-							<form method="post" action="#">
-
-								<!-- Form -->
-                                <!--  write an email form for me
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="3"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" /></li>
-									</ul>
-								</form>
-
-
-							  -->
-							  <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/mknlppao/" method="post">
+							  <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://www.formspree.io/f/mknlppao/" method="post">
 								<fieldset id="fs-frm-inputs">
 								  <label for="full-name">Full Name</label>
 								  <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
