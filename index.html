@@ -105,9 +105,10 @@
 														<li style="margin-left:2em">Optimization: Linear, Convex, Stochastic</li>
 														<li style="margin-left:2em">Bayesian Statistics</li>
 														<li style="margin-left:2em">Approximation: Fourier, Polynomial, Wavelets</li>
+														<li style="margin-left:2em">Mathematics of Deep Learning</li>
 													</ul>
 
-												I will be focusing on other aspects of machine learning, like further deep learning and maching learning mathematics, as well as more statistics in my senior year of ACME.
+												I will be focusing on other aspects of machine learning, like further deep learning and maching learning mathematics, as well as more statistics and modeling (with dynamics and data) in my senior year of ACME.
 
 											</p>
 										</div>
@@ -196,24 +197,75 @@
 										<h2>Recent Professional Experience</h2>
 										<p>You can find a full list of my other internships on <b><a href="https://www.linkedin.com/in/oscar-j-escobar/">LinkedIn</a></b>.</p>
 
-										<h3>ML Intern Developer | June 2024-Aug 2024</h3> (Under Construction)
+										<h3>ML Intern Developer | June 2024-Aug 2024</h3> 
 											<p>
 												I was able to work at Wells Fargo under the Analytics & Data Undergraduate Program (ADUP) in Minneapolis.
 												ADUP gave me the opportunity to choose the sorts of projects I wanted to work in, and having had experience in ML from my previous role, I chose ML modeling and data analysis.
-												Given the choices, I chose to go into the Advanced Data Analytics & Solutions team under Andy Chandler.
+												Given the choices, I chose to go into the Advanced Data Analytics & Solutions team under Andy Chandler to work more on the NLP opportunities his team presented.
 											</p>	
 
 											<p>
-												I was able to collaborate
-												Currently, I am collaborating in the design of an ML classification model that will take company data of business processes and then predict service level agreement adherence.
-												To aid with this, I querying and performing data analysis within Wells Fargo Oracle and Teradata databases using Toad Data Point and Power BI.
-												I am trying to find, clean, extract important model input features to help our model.
+												I formed part of 4 person intern-team that built 6 ML models comprised classification models and regressions.
+												Our main task was to answer 2 questions: 1) Does the given dataset possess anything that is predictive for assessing project risks and timelines? 2) Given the assumption of 1, can ML or NLP help assess project risks and timelines?
 											</p>
 
 											<p>
-												Moreover, I am also looking to expand the model's ability by doing some NLP on the databases containing descriptions of the business processes to help the model predict risk levels in accordance to Wells Fargo risk policies and procedures.
-												I am working at first doing some linear regressions on the given text to employ sentiment analysis to see if we can sort the text into two broad categories of risk.
-												I also am taking initiative in project managing our team project for goals and milestones in our modeling process and product design.
+												In answer to number 1, I looked at the given project dataset spanning 8 years to understand what we worked with and find features that a model could use. 
+												Moreover, I spent time reading the overall policies and guidelines Wells Fargo established to work with the projects we had access to.
+												My manager was very surprised that I would actually read the long documentation to find important ML features. 
+												In his words, "No one does that."
+												To me, I figured that the math must be applicable but that I had to find a way to connect it to the task by first understanding how a human would actually sort through the business project info.
+												I cannot just tell a machine "Here is some project data, make sense of it" without first doing the exploration myself to see where the modeling and code can speed up the process as well as quantify what in the past Wells Fargo had attempted to do.
+											</p>
+
+											<p>
+												I am happy to say that my reading of the documentation actually helped me tidentify important features and milestones that each project should, at least in theory, hit according to its risks.
+												I related the information to the team who did their own digging and then led us to create a table explaining these potential features we were finding.
+												The unfortunate downside of having dug through the documentation was that I found that the data contained a lot of error and variability.
+												In speaking to another manager we met, Michelle Bellanger, I learned that most of the information we had while it had improved still was not all uniform nor was there a concrete way to mark how a project was doing as well as when timelines where changed.
+												Thus, we had to work under the assumption that our dataset, of about 5000 business projects information, contained errors that we could fix or even find.
+												So we decided to just extract what we found important in all the projects and assumed that those had no error.
+											</p>
+
+											<p>
+												Once we found the features or predictors for future business projects, I dove into the realm of NLP text classification using the statistical approach.
+												I also contributed the feature analysis of the models my 3 other friends worked on.
+												In particular, I helped Cece in first testing out which features her random forest should look at.
+												I also helped Otto understand and describe the nature of SKLearn linear regression model as that uses Ordinary Least Squares, which for our given data set may not be appropriate since the input also has errors.
+											</p>
+
+											<p>
+												For my modeling in NLP, I tried out several models like Naive Bayes, Complement Naive Bayes, and LinearSVC (all from SKLearn).
+												In the set up, I decided on using the common TfIDF. 
+												In my initial EDA work, I found that the overall dataset had several repeated words that were meant to quantify the risk but were used quite liberally.
+												As such, I decided for a minimum document frequency of 5 documents but a max of 65% of all documents. 
+												Moreover, my ability to perform part-of-speech tagging was hindered as well as preprocessing ability. 
+												Ultimately, I was able to get a work around for eliminating stopwords as well eliminating numbers from the documents.
+												Pnina Veisberg, a manager in the NLP side of Wells Fargo, was able to check out my initial pre-processing and stated that since our dataset was very small the elimnation of numbers should be ok.
+											</p>
+
+											<p>
+												My overall contribution were 2 NLP text classification models: risk classification model and a binary timeline classification model. 
+												The risk classification model is meant to take in business project descriptions and classify the project to one of Wells Fargo's risk categories.
+												In my EDA, I found that about 1/3 projects were classified into wrong risk categories that would in turn affect the given timelines to finish the project.
+												My model ultimately was able to have a 77% accuracy in risk classification using a 7 fold cross validation scheme. 
+												Despite having about 5000 business projects, I was only able to actually use 1,500 or so for the text classification as only those actually contained text. 
+												Moreover, about 57% of those 1,500 projects were of lower risk categories so that more often than not my model would have struggle classifying higher risk projects appropriately.
+											</p>
+
+											<p>
+												For the binary classification, the main goal was to take a given text description of a project and predict if given the description, the model would meet the timelines set by Wells Fargo on projects.
+												Again, the text information was very volatile but even more so with projects that would meet timelines or not. 
+												For this model, I worked with only 1,200 projects out of the 1,500 possible projects. 
+												Moreover, 2 out of every 3 projects would not meet its given timelines so that my model was highly biased toward classifying a "No."
+												My model achieved a 68% 7 fold cross validated accuracy.
+											</p>
+
+											<p>
+												Overall, I was able to present my findings and suggestions to all of the team and higher managers that dealt with these specific business projects on my penultimate day of my internship.
+												My main findings were that the data contained a lot of volatility and NLP is not yet adequate to predict any risks or binary timeline adherence.
+												I suggested that they first need to standardize the text descriptions to where they do not use the same repetitive words to quantify risk or timeline adherence.
+												Rather, they should look at being descriptive for each project and detailed enough so that each project can stand out as an individual project. 
 											</p>
 
 										<h3>ML & Data Science Student Engineer | April 2023-April 2024</h3>
@@ -242,17 +294,21 @@
 										<h2>More</h2>
 										<h3>Research & Projects</h3>
 
-											<h4> Modeling Attacks with Reinforcement Learning; BYU IdeA Labs (Sept 2024-Present)</h4>
+											<h4> Destabilizing the World; BYU IdeA Labs (Sept 2024-Present)</h4>
 											<p>
-												Comming Soon!
+												I have barely begun this project. 
+												From first research meeting with Dr. Grisman, who is my research advisor, I will be looking at modeling electrical infrastructure attacks using reinforcement learning.
+												I will be looking at what algorithms or deep learning algorithms can be used to help an agent learn an optimal policy that can meet the math theory of a destabilizing a control system. 
+												The hope is to be able to prevent such attacks from happening on local electrical substations. 
 											</p>
 
 											<h4>  Wildfire Model Optimization; BYU - Missoula Fire Lab (Sept 2024-Present)</h4>
 													<p>
-													  Coming soon!
+													  I also started this other project with Dr. Barker from the mathematics department in conjunction to his work with Missoula Fire Lab.
+													  The main goal of the project is to find a way to perform spectral methods on current wildfire modling techniques where we can implement the Fourier Basis.
+													  The next goal would be to implement the Fast Fourier Transform so that computational cost is truncated significantly with the hope of being able to run some of the more complex models in laptops of forest agents.
 													</p>
 							
-
 
 											<h4>Nozzle Design using CFD; BYU Rocketry Club-Hybrid Rocket Research Team (Sep 2021-Aug 2023)</h4>
 												<p>I joined the BYU Rocketry Club: Hybrid Rocket Research Team back in the fall of 2021. My friend Brennen invited me to come and at least see what the club was about.
@@ -275,7 +331,7 @@
 
 
 										<h3>Current Activities</h3>
-											<h4>ACME Class President (Sep 2023-Present) </h4>
+											<h4>ACME resident (Sep 2023-Sep 2024) </h4>
 												<p>
 													I have always seen leadership as a way of voicing the opinion of others but also as a way to help myself bring about changes in my life that would lead to a better future. 
 													As such, I joined the student advisory comittee of ACME (SACME) the summer leading my junior year to be able to learn more from the seniors and professors attending as well as to be able to impact decisions that would be taken for my program. 
