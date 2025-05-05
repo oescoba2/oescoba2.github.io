@@ -36,7 +36,7 @@
 						<a href="#about" class="btn">About Me</a>
 						<a href="#edu" class="btn">Education</a>
 						<a href="#exp" class="btn">Experience</a>
-						<a href="#research" class="btn">Research</a>
+						<a href="#mywork" class="btn">My Work</a>
 						<a href="#contact" class="btn">Contact</a>
 					</ul>
 					<ul class="icons">
@@ -79,7 +79,7 @@
 										</p>
 
 										<p>
-											You can checkout my current and past work
+											You can checkout my current and past work/project results
 										<b><a href="https://github.com/oescoba2/MyWork">here</a></b>. 
 										</p>
 
@@ -159,67 +159,19 @@
 											</p>	
 
 											<p>
-												I formed part of 4 person intern-team that built 6 ML models comprised classification models and regressions.
+												The Advanced Data Analytics team was looking at data from previous Wells Fargo projects.
+												This data contained information about timelines, next steps, people on the team, description of the project and scope of it, as well as other information like dollar amounts and people who get covered by the project.
+												But, the data was very messy and inconsistent as measurements, collection, and organization is concerned.
 												Our main task was to answer 2 questions: 1) Does the given dataset possess anything that is predictive for assessing project risks and timelines? 2) Given the assumption of 1, can ML or NLP help assess project risks and timelines?
 											</p>
-
+											
 											<p>
-												In answer to number 1, I looked at the given project dataset spanning 8 years to understand what we worked with and find features that a model could use. 
-												Moreover, I spent time reading the overall policies and guidelines Wells Fargo established to work with the projects we had access to.
-												My manager was very surprised that I would actually read the long documentation to find important ML features. 
-												In his words, "No one does that."
-												To me, I figured that the math must be applicable but that I had to find a way to connect it to the task by first understanding how a human would actually sort through the business project info.
-												I cannot just tell a machine "Here is some project data, make sense of it" without first doing the exploration myself to see where the modeling and code can speed up the process as well as quantify what in the past Wells Fargo had attempted to do.
-											</p>
-
-											<p>
-												I am happy to say that my reading of the documentation actually helped me tidentify important features and milestones that each project should, at least in theory, hit according to its risks.
-												I related the information to the team who did their own digging and then led us to create a table explaining these potential features we were finding.
-												The unfortunate downside of having dug through the documentation was that I found that the data contained a lot of error and variability.
-												In speaking to another manager we met, Michelle Bellanger, I learned that most of the information we had while it had improved still was not all uniform nor was there a concrete way to mark how a project was doing as well as when timelines where changed.
-												Thus, we had to work under the assumption that our dataset, of about 5000 business projects information, contained errors that we could fix or even find.
-												So we decided to just extract what we found important in all the projects and assumed that those had no error.
-											</p>
-
-											<p>
-												Once we found the features or predictors for future business projects, I dove into the realm of NLP text classification using the statistical approach.
-												I also contributed the feature analysis of the models my 3 other friends worked on.
-												In particular, I helped Cece in first testing out which features her random forest should look at.
-												I also helped Otto understand and describe the nature of SKLearn linear regression model as that uses Ordinary Least Squares, which for our given data set may not be appropriate since the input also has errors.
-											</p>
-
-											<p>
-												For my modeling in NLP, I tried out several models like Naive Bayes, Complement Naive Bayes, and LinearSVC (all from SKLearn).
-												In the set up, I decided on using the common TfIDF. 
-												In my initial EDA work, I found that the overall dataset had several repeated words that were meant to quantify the risk but were used quite liberally.
-												As such, I decided for a minimum document frequency of 5 documents but a max of 65% of all documents. 
-												Moreover, my ability to perform part-of-speech tagging was hindered as well as preprocessing ability. 
-												Ultimately, I was able to get a work around for eliminating stopwords as well eliminating numbers from the documents.
-												Pnina Veisberg, a manager in the NLP side of Wells Fargo, was able to check out my initial pre-processing and stated that since our dataset was very small the elimnation of numbers should be ok.
-											</p>
-
-											<p>
-												My overall contribution were 2 NLP text classification models: risk classification model and a binary timeline classification model. 
-												The risk classification model is meant to take in business project descriptions and classify the project to one of Wells Fargo's risk categories.
-												In my EDA, I found that about 1/3 projects were classified into wrong risk categories that would in turn affect the given timelines to finish the project.
-												My model ultimately was able to have a 77% accuracy in risk classification using a 7 fold cross validation scheme. 
-												Despite having about 5000 business projects, I was only able to actually use 1,500 or so for the text classification as only those actually contained text. 
-												Moreover, about 57% of those 1,500 projects were of lower risk categories so that more often than not my model would have struggle classifying higher risk projects appropriately.
-											</p>
-
-											<p>
-												For the binary classification, the main goal was to take a given text description of a project and predict if given the description, the model would meet the timelines set by Wells Fargo on projects.
-												Again, the text information was very volatile but even more so with projects that would meet timelines or not. 
-												For this model, I worked with only 1,200 projects out of the 1,500 possible projects. 
-												Moreover, 2 out of every 3 projects would not meet its given timelines so that my model was highly biased toward classifying a "No."
-												My model achieved a 68% 7 fold cross validated accuracy.
-											</p>
-
-											<p>
-												Overall, I was able to present my findings and suggestions to all of the team and higher managers that dealt with these specific business projects on my penultimate day of my internship.
-												My main findings were that the data contained a lot of volatility and NLP is not yet adequate to predict any risks or binary timeline adherence.
-												I suggested that they first need to standardize the text descriptions to where they do not use the same repetitive words to quantify risk or timeline adherence.
-												Rather, they should look at being descriptive for each project and detailed enough so that each project can stand out as an individual project. 
+												As per the results, in answer to question 1, I was able to find predictive power within the text description of the business projects, particularly in the risk descriptions of the project.
+												More often than not, the risk description was pretty predictive in helping give a binary classification if a given project can meet Wells Fargo's established timelines (an anwer to 2).
+												I was able to give the team a trained NLP text classification model that employs an SVC classifier.
+												Due to the volatility in the data, the classifier had a performance range of 63-72% classification accuracy for binary timeline prediction.
+												But, the model did better, with a performance range of 73-79% classification, in classifying projects into the different Wells Fargo risk tiers.
+												My code also took care of the text cleaning and standardization where I eliminated stop words and use 2-grams.
 											</p>
 
 										<h3>ML & Data Science Student Engineer | April 2023-April 2024</h3>
@@ -243,13 +195,17 @@
 											</p>
 									</div>
 
-									<div class="Research" id="research">
+									<div class="My Work" id="mywork">
 										<hr />
 										
-										<h2>Research & Projects</h2>
+										<h2>My Work</h2>
 										You can checkout my <b><a href="https://github.com/oescoba2/MyWork">repo</a></b> where I host my projects.
+										I give a more detailed explanation of my current research and projects here.
+										In my repo, I host more of my code and results.
 
-											<h3>  Wildfire Model Optimization; BYU - Missoula Fire Lab (Sept 2024-Present)</h3>
+											<h3>Research </h3>
+
+											<h4>  Wildfire Model Optimization; BYU - Missoula Fire Lab (Sept 2024-Present)</h4>
 													<p>
 													  I also started this other project with Dr. Barker from the mathematics department in conjunction to his work with Missoula Fire Lab.
 													  Wind is a big principal component of wildfires, but it is hard to model properly.
@@ -258,27 +214,30 @@
 													  The main goal of the project is to find a way to perform spectral methods on current wildfire modling techniques where we can implement the Fourier Basis.
 													  The next goal would be to implement the Fast Fourier Transform so that computational cost is truncated significantly with the hope of being able to run some of the more complex models in laptops of forest agents.
 													  This would allow us to make wind modeling fast and accessible at the time of disasters.
-													  I will be presenting my current work <b><a href="https://src.byu.edu/abstract/detail/8386">here</a> </b>.
+													  I presented my current work <b><a href="https://src.byu.edu/abstract/detail/8386">here</a> </b>.
 													</p>
 							
-											<h3> (Under Construction) Breast Cancer Modeling; (Sept 2024 - Present) </h3>
+											<h4> Optimal Control in Mathematical Oncology; (Sept 2024 - April 2024) </h4>
 													<p>
 														As part of my Modeling with Dynamics class, we have to perform a small research project where we get to select a specific system or world phenomena we would like to explore and model.
 														My team chose to model Breast Cancer growth under the effects immunological response and chemotherapy.
-
-
-
-											
+														We first focused on finding an ODE model that incorporated tumor-immune-cell interactions modeled by Michaelis Menten Kinetics (MMK).
+														I did the main research for both models and came across Gompertzian growth as well as an exponential decay of the chemo (mainly by reading DePillis).
+														
 													</p>
 													<p>
+														The next phase was to pick a specific cancer, invasive ductal carcinoma (IDC), and modeled that with a specific treatment.
+														We opted for the Adriamycin-Cytoxan (AC) treatment which comprises doxorubicin and cyclophosphamide.
+														I did the main application of optimal control theory in order to find an optimal continuous dosage.
+														I leveraged Pontryagin's Maximum Principle and used an iterative method to numerically solve for the continuous dosage.
+														We were able to find an optimal dose that seems aligned with existing research of bang-bang solutions.
+														However, our in-silico results show a continual decay of epithelial cells which made us question the accuracy of our model (at least in the chemo effects portion).
 														If you would like to see our paper, please contact me.
 													</p>
 
-											<h3>Nozzle Design using CFD; BYU Rocketry Club-Hybrid Rocket Research Team (Sep 2021-Aug 2023)</h3>
-												<p>I joined the BYU Rocketry Club: Hybrid Rocket Research Team back in the fall of 2021. My friend Brennen invited me to come and at least see what the club was about.
-													I am glad to say that the rest is history. 
-													I have always had a big affinity to the cosmos and intricacies of astronautics and the engineering and mathematics contained therein. 
-													Upon joining the club overseen by Dr. Gorrell, we were the recipients of a grant from the Utah-NASA Consortium of about $8,000 that was to be used to generate research for paraffin LOX hybrid fuel. 
+											<h4> (Published) Nozzle Design using CFD; BYU Rocketry Club-Hybrid Rocket Research Team (Sep 2021-Aug 2023)</h4>
+												<p>I joined the BYU Rocketry Club: Hybrid Rocket Research Team back in the fall of 2021.
+													We were the recipients of a grant from the Utah-NASA Consortium of about $8,000 that was to be used to generate research for paraffin LOX hybrid fuel. 
 													We created a design for a 12ft rocket that would reach a target of 10,000 ft and have a maiden voyage in the summer of 2022. 
 													We (see below) were able to present our findings at the Utah-NASA Consortium 2022 Spring Conference and publish it in the Utah-NASA Consortium <b><a href="https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=1706&context=spacegrant">webpage</a> </b>.
 												</p>
@@ -292,11 +251,10 @@
 													I was later able to implement numerical methods for the transonic region analysis.
 													The main goal of this was to better estimate the mach number achieved by the nozzle as well as better configure the mesh of the method of characteristics.
 												</p>
-												
-										<div class="image main"><img src="images/The_Cosmos.JPG" alt="" /></div>
-										</div>
-											</div>
 									</div>
+
+								</div>
+							</div>
 
 				<!-- Footer -->
 					<footer id="footer">
@@ -349,124 +307,3 @@
 
 	</body>
 </html>
-<h3>Career Goals and Interests</h3>
-<b>"Without vision, the people perish,"</b> a wise man once stated. I do not have every detail of my life mapped, but I do have some aspirations I am 
-trying to bring to fruition. The cosmos has always inspired me to search for more and be able to fail quickly and learn in order to arrive at the at the grand reward. 
-Machine Learning
-has taught me that the reward oft times requires one to have patience and diligence and a good plan and an keen eye for improvement.<br><br>
-
-I have current plans to attend graduate school in mathematics, computer science,
-or mechanical 
-engineering, depending on type of industry I work in. Aerospace, while it has complicated math, it does require more hands on work as well as technical knowledge for design
-and construction of vehicles and engines. Machine learning and data science requires the more heavy side of mathematics and graph and network theory to make use of 
-algorithms and statistics to predict and model, even the computational heavy complutational fluid dynamics I currently do, but there is also quite a bit of CS in there as well. 
-I am open to all three but do lean more
-towards mathematics since I have been more in love with the complexity and difficutly of the engineering and machine learning problems because of the complex math they require. I plan on pursuing a 
-Master's degree no later than 1 year after graduation and hope to do that at MIT. 
-<br><br>
-For work, I love to learn and always improve current processes as well as tackle on new problems. I hope to work in the Aerospace industry shortly after graduation and work in the design 
-and analysis of rockets, spacecraft, and propulsion, most especially the thermodynamic side of engineering. But I am also open to aeronautics as I enjoy all things that fly. I love the complexity of 
-the problems so much that 
-my parents and friends usually describe me as having a fervent passion for rockets. If I could send myself to space, that would be great. <br><br>
-I would then like to pivot to a Machine Learning Job that 
-focuses more on the data analytics and modeling, with some research sprinkled in,  because I have always found that numbers tell a part of the story one cannot see with the naked eye unless
-we sort out the data or predict it with good accuracy. <br><br>
-
-Mathematics is the cornerstone of things that give me passion as well as being the cornerstone of all of STEM. I have many aspirations in a very demanding and technical field that seeks to
-prove itself and ensure it is error free. But I resonate with President Kennedy in that <b>"[I] choose to go to the moon ... and do the other things, not because they are easy, but because they are hard, 
-because that goal will serve to organize and measure the best of [my] energies and skills, because that challenge is one that [I am] willing to accept, one [I am] unwilling to postpone, and one which [I] 
-intend to win, and the others, too."</b>
-
-<div class="Skills" id="skills">
-	<h2>Skills (under construction)</h2>
-
-	Here is a list of the current skills that I currently possess. Note that those with an asterisk are skills I will have developed after completion of my senior year.<br>
-	<style>
-		ul {
-		columns: 2;
-		-webkit-columns: 2;
-		-moz-columns: 2;
-		margin-top: 0;
-		margin-bottom: 0;
-		}
-	</style>
-	<b>Coding:</b>
-		<ul class="columns" style="list-style-type:circle;" >
-			<li style="margin-left:2em">Expert</li>
-			<ul class="columns" style="list-style-type:square;">
-				<li style="margin-left:3em">Python</li>
-				<li style="margin-left:3em">Git/GitHub</li>
-
-			</ul>
-			<li style="margin-left:2em">Proficient</li>
-			<ul class="columns" style="list-style-type:square;">
-				<li style="margin-left:3em">UnixShell/Bash</li>
-				<li style="margin-left:3em">SQL</li>
-				<li style="margin-left:3em">SciKit Learn</li>
-				<li style="margin-left:3em">Pandas</li>
-				<li style="margin-left:3em">Gymnasium</li>
-			</ul>
-
-			<li style="margin-left:2em">Experience with</li>
-			<ul class="columns" style="list-style-type:square;">
-				<li style="margin-left:3em">RStudio (*)</li>
-				<li style="margin-left:3em">C++</li>
-				<li style="margin-left:3em">PyTorch (*)</li>
-				<li style="margin-left:3em">PySpark (*)</li>
-				<li style="margin-left:3em">RLlib (*) </li>
-				<li style="margin-left:3em">Oracle</li>
-				<li style="margin-left:3em">Hadoop</li>
-				<li style="margin-left:3em">Excel</li>
-				<li style="margin-left:3em">Power BI</li>
-			</ul>
-			
-	<b>Data Structures:</b>
-		<ul class="columns" style="list-style-type:circle;";>
-			<li style="margin-left:2em">Linked Lists: Single and Doubly</li>
-			<li style="margin-left:2em">Heaps</li> 
-			<li style="margin-left:2em">Queues & Stacks</li>
-			<li style="margin-left:2em">Binary Search Trees</li>
-			<li style="margin-left:2em">AVL Trees</li>
-			<li style="margin-left:2em">B Trees</li>
-		</ul>
-	<b>Statistics & Approximation:</b>
-		<ul class="columns" style="list-style-type:circle;";>
-			<li style="margin-left:2em">Fourier Series</li>
-			<ul class="columns" style="list-style-type:square;">
-				<li style="margin-left:3em">Fast Fourier</li>
-				<li style="margin-left:3em">Periodic Sampling</li>
-				<li style="margin-left:3em">Fast Convolution</li>
-			</ul>
-			<li style="margin-left:2em">Wavelets and Fast WaveletÍ</li>
-			<li style="margin-left:2em">Discrete and Continuous Probability</li>
-			<li style="margin-left:2em">Probabilistic Sampling and Estimation </li>
-			<li style="margin-left:2em">Bayesian Statistics</li>
-			<li style="margin-left:2em">Monte Carlo Methods</li>
-			<li style="margin-left:2em">Sampling: Inversion, Rejection, and Importance</li>
-			<li style="margin-left:2em">Hashing</li>
-
-		</ul>
-	<b>Algorithms:</b> 
-		<ul class="columns" style="list-style-type:circle;">
-			<li style="margin-left:2em">Dynamic Programming</li>
-			<ul class="columns" style="list-style-type:square;">
-				<li style="margin-left:3em">Memoized</li>
-				<li style="margin-left:3em">Greedy</li>
-				<li style="margin-left:3em">Bottom-Up</li>
-			</ul>
-			<li style="margin-left:2em">Depth First Search & Breath First Search</li>
-			<li style="margin-left:2em">Dijkstra's</li> 
-			<li style="margin-left:2em">Prim's & Kruskal's</li>
-			<li style="margin-left:2em">Huffman Encoding</li>
-		</ul>
-	<b>Excel:</b>
-		<ul class="columns" style="list-style-type:circle;">
-			<li style="margin-left:2em">Charting</li>
-			<li style="margin-left:2em">What-If Analysis</li>
-			<li style="margin-left:2em">Pivot Tables</li>
-		</ul>
-
-	If you would like to see my current code style or implementation of my skills, visit
-	<b><a href="https://github.com/oescoba2/website_projects/">here</a></b>. 
-
-</div>
