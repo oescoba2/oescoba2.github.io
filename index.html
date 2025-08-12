@@ -97,15 +97,14 @@
 										}
 									</style>
 										<ul class="columns" style="list-style-type:circle;";>
+											<li style="margin-left:2em">Python, SQL, C++</li>
+											<li style="margin-left:2em">Flask (Web App) & HTML</li>
+											<li style="margin-left:2em">AI & ML: PyTorch, Keras, Scikit Learn, Deep RL (DQN & Policy Gradients)</li>
 											<li style="margin-left:2em">Optimal Control Theory: PMP, HJB, LQR & LQG</li>
 											<li style="margin-left:2em">Data Assimilation: Kalman, Particle Filters, EnKF</li>
-											<li style="margin-left:2em">NLP</li>
-											<li style="margin-left:2em">Deep Learning (PyTorch & Keras)</li>
-											<li style="margin-left:2em">Deep Reinforcement Learning: DQN & Policy Gradients</li>
 											<li style="margin-left:2em">Time Series Analysis & HMMs (statsmodels & hmmlearn)</li>
-											<li style="margin-left:2em">Machine Learning (SciKit Learn)</li>
 											<li style="margin-left:2em">Bayesian Statistics & Probability Theory & MCMC</li>
-											<li style="margin-left:2em">Python & SQL</li>
+											
 										</ul>
 									<hr/>
 									<div class="Education" id="edu">
@@ -135,8 +134,6 @@
 														<li style="margin-left:2em">Optimization</li>
 														<li style="margin-left:2em">Modeling with Dynamics (ODE & PDE)</li>
 													</ul>
-
-
 											</p>
 										</div>
 									</div>
@@ -145,11 +142,32 @@
 									<div class="Professional Experience" id="exp">
 										<hr />
 										<h2>Recent Professional Experience</h2>
-										<p>You can find a full list of my other internships on <b><a href="https://www.linkedin.com/in/oscar-j-escobar/">LinkedIn</a></b>.
+										<p>
+											You can find a full list of my other internships on <b><a href="https://www.linkedin.com/in/oscar-j-escobar/">LinkedIn</a></b>.
 											You can checkout my <b><a href="https://github.com/oescoba2/MyWork">repo</a></b> where I host my projects.
-											
-										
 										</p> 
+										<h3>AI Frontend Engineer & App Developer | June 2024-Aug 2024</h3>
+										<p>
+											I returned once more to Wells Fargo's summer internship in the Minneapolis office. 
+											This time I found myself working under two teams: VRT; and the intelligent Monitoring & Automation Team (iMAT).
+										</p>
+
+										<p>
+											I networked with Sam Modde (iMAT manager) to be able to join his team as the team was working on implementing AI for internal use for report automation.
+											I worked in a project, along side a fellow intern, that would automate the creation of a process review report that would normally take about 9.7 hrs for a person to do due to its many a workflow steps.
+											The tool is meant to help a team of 24 reviewers handle the various documents, sites, and repos they have to access in order to validate information.
+											My part came in at the end where after the document, site, and repo data was swept and stored in a master xlsx file my work would have to read and display that to a user friendly HTML report.
+											I delivered a python module that can dynamically infer workflow steps as well as dynamically store the data so that it can be read by an HTML script (using jinja2) to create the report.
+											The HTML report had user friendly dropdowns, text entry area, company color & logo scheme, as well as the ability to save current progress.
+											Moreover, I also created the python module so that it can generate an off-ramp version of the report for those process reviews that are not automated or where the tool breaksdown.
+											This code was sent to testing around the end of July and is set to be rolled into phase 1 production by the middle of August.
+										</p>
+										<p>
+											With the creation of the report, Sam and the rest of the team were very impressed and delighted by the functionality of the report.
+											Since the tool also created various other reports (e.g. error logging, report on which processes were automated ) and we created a good py module, Sam asked Ifrah and I to draft up a SQL schema that could be used to store all the data found in the various reports created by the tool.
+											We delivered and pitched a 5 table schema along a system architecture for handling data upload and deletion to the table that followed company data policies.
+											The team is currently looking at implementing our idea using the python skeleton we left (using teradatasql module).
+										</p>
 
 										<h3>ML Intern Developer | June 2024-Aug 2024</h3> 
 											<p>
@@ -174,25 +192,7 @@
 												My code also took care of the text cleaning and standardization where I eliminated stop words and use 2-grams.
 											</p>
 
-										<h3>ML & Data Science Student Engineer | April 2023-April 2024</h3>
-											<p>
-												I was able to work in the Family History Center, located in Lehi, UT, of The Church of Jesus Christ of Latter-day Saints.
-												During my time at the center, I was able to work with a machine learning production model that extracts genealogical information from digital artifacts.
-												The main goal was to improve the model's ability to correctly identify crucial information from the digital artifact that was needed to help create more online records in less serviced populations like Spanish speakers, Portuguese, and Hungarian.
-											</p>
 										
-											<p>
-												I initially helped identified error and improvement areas (primarily being name identification and spelling) of the model that helped increase the performance by around 20-30%.
-												To do this, I created my own Python script that would take the genealogical information output, as a .txt, and compared it to manually extracted and curated information (i.e. data labels). 
-												The script would then do various comparisons, like searching for biggest contiguous string, and perform basic statistical analysis to help identify areas of improvement.
-											</p>
-
-											<p>
-												Furthermore, I also led efforts and meetings with a team of 3 data labelers in creating the data labels to help train the model. 
-												My other responsibility was also documenting our findings and procedures to help further define the process of data labeling and data analysis of our team and role. 
-												Because of how well I did, my manager, Jon, offered me a part-time extension towards the end of my internship that I could continue as I went into my then junior year of the ACME program.
-												I happily continued the role and fulfilled the same responsibilities until the end of the internship. 
-											</p>
 									</div>
 
 									<div class="My Work" id="mywork">
